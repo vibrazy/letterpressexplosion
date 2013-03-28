@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C037AB21704A960001FF084 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AB11704A960001FF084 /* UIKit.framework */; };
+		6C037AB41704A960001FF084 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AB31704A960001FF084 /* Foundation.framework */; };
+		6C037AB61704A960001FF084 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AB51704A960001FF084 /* CoreGraphics.framework */; };
+		6C037ABC1704A960001FF084 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C037ABA1704A960001FF084 /* InfoPlist.strings */; };
+		6C037ABE1704A960001FF084 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C037ABD1704A960001FF084 /* main.m */; };
+		6C037AC21704A960001FF084 /* DTVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C037AC11704A960001FF084 /* DTVAppDelegate.m */; };
+		6C037AC41704A960001FF084 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C037AC31704A960001FF084 /* Default.png */; };
+		6C037AC61704A960001FF084 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C037AC51704A960001FF084 /* Default@2x.png */; };
+		6C037AC81704A960001FF084 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C037AC71704A960001FF084 /* Default-568h@2x.png */; };
+		6C037ACB1704A960001FF084 /* DTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C037ACA1704A960001FF084 /* DTVViewController.m */; };
+		6C037ACE1704A960001FF084 /* DTVViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C037ACC1704A960001FF084 /* DTVViewController_iPhone.xib */; };
+		6C037AD11704A960001FF084 /* DTVViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C037ACF1704A960001FF084 /* DTVViewController_iPad.xib */; };
+		6C037AD91704A960001FF084 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AD81704A960001FF084 /* SenTestingKit.framework */; };
+		6C037ADA1704A960001FF084 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AB11704A960001FF084 /* UIKit.framework */; };
+		6C037ADB1704A960001FF084 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AB31704A960001FF084 /* Foundation.framework */; };
+		6C037AE31704A960001FF084 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C037AE11704A960001FF084 /* InfoPlist.strings */; };
+		6C037AE61704A960001FF084 /* LetterPressExplosionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C037AE51704A960001FF084 /* LetterPressExplosionTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6C037ADC1704A960001FF084 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C037AA61704A960001FF084 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C037AAD1704A960001FF084;
+			remoteInfo = LetterPressExplosion;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6C037AAE1704A960001FF084 /* LetterPressExplosion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetterPressExplosion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C037AB11704A960001FF084 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6C037AB31704A960001FF084 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6C037AB51704A960001FF084 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6C037AB91704A960001FF084 /* LetterPressExplosion-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LetterPressExplosion-Info.plist"; sourceTree = "<group>"; };
+		6C037ABB1704A960001FF084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6C037ABD1704A960001FF084 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6C037ABF1704A960001FF084 /* LetterPressExplosion-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LetterPressExplosion-Prefix.pch"; sourceTree = "<group>"; };
+		6C037AC01704A960001FF084 /* DTVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTVAppDelegate.h; sourceTree = "<group>"; };
+		6C037AC11704A960001FF084 /* DTVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTVAppDelegate.m; sourceTree = "<group>"; };
+		6C037AC31704A960001FF084 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		6C037AC51704A960001FF084 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		6C037AC71704A960001FF084 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6C037AC91704A960001FF084 /* DTVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTVViewController.h; sourceTree = "<group>"; };
+		6C037ACA1704A960001FF084 /* DTVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTVViewController.m; sourceTree = "<group>"; };
+		6C037ACD1704A960001FF084 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DTVViewController_iPhone.xib; sourceTree = "<group>"; };
+		6C037AD01704A960001FF084 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DTVViewController_iPad.xib; sourceTree = "<group>"; };
+		6C037AD71704A960001FF084 /* LetterPressExplosionTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LetterPressExplosionTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C037AD81704A960001FF084 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		6C037AE01704A960001FF084 /* LetterPressExplosionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LetterPressExplosionTests-Info.plist"; sourceTree = "<group>"; };
+		6C037AE21704A960001FF084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6C037AE41704A960001FF084 /* LetterPressExplosionTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LetterPressExplosionTests.h; sourceTree = "<group>"; };
+		6C037AE51704A960001FF084 /* LetterPressExplosionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LetterPressExplosionTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C037AAB1704A960001FF084 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C037AB21704A960001FF084 /* UIKit.framework in Frameworks */,
+				6C037AB41704A960001FF084 /* Foundation.framework in Frameworks */,
+				6C037AB61704A960001FF084 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C037AD31704A960001FF084 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C037AD91704A960001FF084 /* SenTestingKit.framework in Frameworks */,
+				6C037ADA1704A960001FF084 /* UIKit.framework in Frameworks */,
+				6C037ADB1704A960001FF084 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C037AA51704A960001FF084 = {
+			isa = PBXGroup;
+			children = (
+				6C037AB71704A960001FF084 /* LetterPressExplosion */,
+				6C037ADE1704A960001FF084 /* LetterPressExplosionTests */,
+				6C037AB01704A960001FF084 /* Frameworks */,
+				6C037AAF1704A960001FF084 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6C037AAF1704A960001FF084 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C037AAE1704A960001FF084 /* LetterPressExplosion.app */,
+				6C037AD71704A960001FF084 /* LetterPressExplosionTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C037AB01704A960001FF084 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C037AB11704A960001FF084 /* UIKit.framework */,
+				6C037AB31704A960001FF084 /* Foundation.framework */,
+				6C037AB51704A960001FF084 /* CoreGraphics.framework */,
+				6C037AD81704A960001FF084 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C037AB71704A960001FF084 /* LetterPressExplosion */ = {
+			isa = PBXGroup;
+			children = (
+				6C037AC01704A960001FF084 /* DTVAppDelegate.h */,
+				6C037AC11704A960001FF084 /* DTVAppDelegate.m */,
+				6C037AC91704A960001FF084 /* DTVViewController.h */,
+				6C037ACA1704A960001FF084 /* DTVViewController.m */,
+				6C037ACC1704A960001FF084 /* DTVViewController_iPhone.xib */,
+				6C037ACF1704A960001FF084 /* DTVViewController_iPad.xib */,
+				6C037AB81704A960001FF084 /* Supporting Files */,
+			);
+			path = LetterPressExplosion;
+			sourceTree = "<group>";
+		};
+		6C037AB81704A960001FF084 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C037AB91704A960001FF084 /* LetterPressExplosion-Info.plist */,
+				6C037ABA1704A960001FF084 /* InfoPlist.strings */,
+				6C037ABD1704A960001FF084 /* main.m */,
+				6C037ABF1704A960001FF084 /* LetterPressExplosion-Prefix.pch */,
+				6C037AC31704A960001FF084 /* Default.png */,
+				6C037AC51704A960001FF084 /* Default@2x.png */,
+				6C037AC71704A960001FF084 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6C037ADE1704A960001FF084 /* LetterPressExplosionTests */ = {
+			isa = PBXGroup;
+			children = (
+				6C037AE41704A960001FF084 /* LetterPressExplosionTests.h */,
+				6C037AE51704A960001FF084 /* LetterPressExplosionTests.m */,
+				6C037ADF1704A960001FF084 /* Supporting Files */,
+			);
+			path = LetterPressExplosionTests;
+			sourceTree = "<group>";
+		};
+		6C037ADF1704A960001FF084 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C037AE01704A960001FF084 /* LetterPressExplosionTests-Info.plist */,
+				6C037AE11704A960001FF084 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6C037AAD1704A960001FF084 /* LetterPressExplosion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C037AE91704A960001FF084 /* Build configuration list for PBXNativeTarget "LetterPressExplosion" */;
+			buildPhases = (
+				6C037AAA1704A960001FF084 /* Sources */,
+				6C037AAB1704A960001FF084 /* Frameworks */,
+				6C037AAC1704A960001FF084 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LetterPressExplosion;
+			productName = LetterPressExplosion;
+			productReference = 6C037AAE1704A960001FF084 /* LetterPressExplosion.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6C037AD61704A960001FF084 /* LetterPressExplosionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C037AEC1704A960001FF084 /* Build configuration list for PBXNativeTarget "LetterPressExplosionTests" */;
+			buildPhases = (
+				6C037AD21704A960001FF084 /* Sources */,
+				6C037AD31704A960001FF084 /* Frameworks */,
+				6C037AD41704A960001FF084 /* Resources */,
+				6C037AD51704A960001FF084 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C037ADD1704A960001FF084 /* PBXTargetDependency */,
+			);
+			name = LetterPressExplosionTests;
+			productName = LetterPressExplosionTests;
+			productReference = 6C037AD71704A960001FF084 /* LetterPressExplosionTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6C037AA61704A960001FF084 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DTV;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Daniel Tavares";
+			};
+			buildConfigurationList = 6C037AA91704A960001FF084 /* Build configuration list for PBXProject "LetterPressExplosion" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6C037AA51704A960001FF084;
+			productRefGroup = 6C037AAF1704A960001FF084 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C037AAD1704A960001FF084 /* LetterPressExplosion */,
+				6C037AD61704A960001FF084 /* LetterPressExplosionTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6C037AAC1704A960001FF084 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C037ABC1704A960001FF084 /* InfoPlist.strings in Resources */,
+				6C037AC41704A960001FF084 /* Default.png in Resources */,
+				6C037AC61704A960001FF084 /* Default@2x.png in Resources */,
+				6C037AC81704A960001FF084 /* Default-568h@2x.png in Resources */,
+				6C037ACE1704A960001FF084 /* DTVViewController_iPhone.xib in Resources */,
+				6C037AD11704A960001FF084 /* DTVViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C037AD41704A960001FF084 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C037AE31704A960001FF084 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C037AD51704A960001FF084 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C037AAA1704A960001FF084 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C037ABE1704A960001FF084 /* main.m in Sources */,
+				6C037AC21704A960001FF084 /* DTVAppDelegate.m in Sources */,
+				6C037ACB1704A960001FF084 /* DTVViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C037AD21704A960001FF084 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C037AE61704A960001FF084 /* LetterPressExplosionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6C037ADD1704A960001FF084 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C037AAD1704A960001FF084 /* LetterPressExplosion */;
+			targetProxy = 6C037ADC1704A960001FF084 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6C037ABA1704A960001FF084 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C037ABB1704A960001FF084 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6C037ACC1704A960001FF084 /* DTVViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C037ACD1704A960001FF084 /* en */,
+			);
+			name = DTVViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		6C037ACF1704A960001FF084 /* DTVViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C037AD01704A960001FF084 /* en */,
+			);
+			name = DTVViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		6C037AE11704A960001FF084 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C037AE21704A960001FF084 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6C037AE71704A960001FF084 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6C037AE81704A960001FF084 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6C037AEA1704A960001FF084 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LetterPressExplosion/LetterPressExplosion-Prefix.pch";
+				INFOPLIST_FILE = "LetterPressExplosion/LetterPressExplosion-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6C037AEB1704A960001FF084 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LetterPressExplosion/LetterPressExplosion-Prefix.pch";
+				INFOPLIST_FILE = "LetterPressExplosion/LetterPressExplosion-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6C037AED1704A960001FF084 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LetterPressExplosion.app/LetterPressExplosion";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LetterPressExplosion/LetterPressExplosion-Prefix.pch";
+				INFOPLIST_FILE = "LetterPressExplosionTests/LetterPressExplosionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		6C037AEE1704A960001FF084 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LetterPressExplosion.app/LetterPressExplosion";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LetterPressExplosion/LetterPressExplosion-Prefix.pch";
+				INFOPLIST_FILE = "LetterPressExplosionTests/LetterPressExplosionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C037AA91704A960001FF084 /* Build configuration list for PBXProject "LetterPressExplosion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C037AE71704A960001FF084 /* Debug */,
+				6C037AE81704A960001FF084 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C037AE91704A960001FF084 /* Build configuration list for PBXNativeTarget "LetterPressExplosion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C037AEA1704A960001FF084 /* Debug */,
+				6C037AEB1704A960001FF084 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6C037AEC1704A960001FF084 /* Build configuration list for PBXNativeTarget "LetterPressExplosionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C037AED1704A960001FF084 /* Debug */,
+				6C037AEE1704A960001FF084 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6C037AA61704A960001FF084 /* Project object */;
+}
