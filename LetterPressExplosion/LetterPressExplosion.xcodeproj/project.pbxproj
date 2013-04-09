@@ -24,8 +24,7 @@
 		6C037ADB1704A960001FF084 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AB31704A960001FF084 /* Foundation.framework */; };
 		6C037AE31704A960001FF084 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C037AE11704A960001FF084 /* InfoPlist.strings */; };
 		6C037AE61704A960001FF084 /* LetterPressExplosionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C037AE51704A960001FF084 /* LetterPressExplosionTests.m */; };
-		6C037AF21704AC6D001FF084 /* UIView+CoreAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C037AF11704AC6D001FF084 /* UIView+CoreAnimation.m */; };
-		6C037AF51704ACE3001FF084 /* ParticleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C037AF41704ACE3001FF084 /* ParticleLayer.m */; };
+		6C037AF21704AC6D001FF084 /* UIView+Explode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C037AF11704AC6D001FF084 /* UIView+Explode.m */; };
 		6C037AF71704ACFE001FF084 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AF61704ACFE001FF084 /* QuartzCore.framework */; };
 		6C037AFA1704AE0E001FF084 /* letterpress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C037AF91704AE0E001FF084 /* letterpress@2x.png */; };
 /* End PBXBuildFile section */
@@ -64,10 +63,8 @@
 		6C037AE21704A960001FF084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6C037AE41704A960001FF084 /* LetterPressExplosionTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LetterPressExplosionTests.h; sourceTree = "<group>"; };
 		6C037AE51704A960001FF084 /* LetterPressExplosionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LetterPressExplosionTests.m; sourceTree = "<group>"; };
-		6C037AF01704AC6D001FF084 /* UIView+CoreAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CoreAnimation.h"; sourceTree = "<group>"; };
-		6C037AF11704AC6D001FF084 /* UIView+CoreAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CoreAnimation.m"; sourceTree = "<group>"; };
-		6C037AF31704ACE3001FF084 /* ParticleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleLayer.h; sourceTree = "<group>"; };
-		6C037AF41704ACE3001FF084 /* ParticleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticleLayer.m; sourceTree = "<group>"; };
+		6C037AF01704AC6D001FF084 /* UIView+Explode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Explode.h"; sourceTree = "<group>"; };
+		6C037AF11704AC6D001FF084 /* UIView+Explode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Explode.m"; sourceTree = "<group>"; };
 		6C037AF61704ACFE001FF084 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6C037AF91704AE0E001FF084 /* letterpress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "letterpress@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,7 +97,6 @@
 		6C037AA51704A960001FF084 = {
 			isa = PBXGroup;
 			children = (
-				6C037AF61704ACFE001FF084 /* QuartzCore.framework */,
 				6C037AB71704A960001FF084 /* LetterPressExplosion */,
 				6C037ADE1704A960001FF084 /* LetterPressExplosionTests */,
 				6C037AB01704A960001FF084 /* Frameworks */,
@@ -120,6 +116,7 @@
 		6C037AB01704A960001FF084 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6C037AF61704ACFE001FF084 /* QuartzCore.framework */,
 				6C037AB11704A960001FF084 /* UIKit.framework */,
 				6C037AB31704A960001FF084 /* Foundation.framework */,
 				6C037AB51704A960001FF084 /* CoreGraphics.framework */,
@@ -180,10 +177,8 @@
 		6C037AEF1704AC6D001FF084 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				6C037AF31704ACE3001FF084 /* ParticleLayer.h */,
-				6C037AF41704ACE3001FF084 /* ParticleLayer.m */,
-				6C037AF01704AC6D001FF084 /* UIView+CoreAnimation.h */,
-				6C037AF11704AC6D001FF084 /* UIView+CoreAnimation.m */,
+				6C037AF01704AC6D001FF084 /* UIView+Explode.h */,
+				6C037AF11704AC6D001FF084 /* UIView+Explode.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -312,8 +307,7 @@
 				6C037ABE1704A960001FF084 /* main.m in Sources */,
 				6C037AC21704A960001FF084 /* DTVAppDelegate.m in Sources */,
 				6C037ACB1704A960001FF084 /* DTVViewController.m in Sources */,
-				6C037AF21704AC6D001FF084 /* UIView+CoreAnimation.m in Sources */,
-				6C037AF51704ACE3001FF084 /* ParticleLayer.m in Sources */,
+				6C037AF21704AC6D001FF084 /* UIView+Explode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +498,7 @@
 				6C037AEB1704A960001FF084 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C037AEC1704A960001FF084 /* Build configuration list for PBXNativeTarget "LetterPressExplosionTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +507,7 @@
 				6C037AEE1704A960001FF084 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
