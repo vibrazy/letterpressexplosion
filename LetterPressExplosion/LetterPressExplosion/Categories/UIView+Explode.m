@@ -6,44 +6,21 @@
 //  Copyright (c) 2013 Daniel Tavares. All rights reserved.
 //
 
-#import "UIView+CoreAnimation.h"
+#import <QuartzCore/QuartzCore.h>
 
-static NSString *GESTURE_BLOCK = @"GESTURE_BLOCK";
+#import "UIView+Explode.h"
 
-@implementation UIView (CoreAnimation)
+@interface LPParticleLayer : CALayer
+
+@property (nonatomic, assign) UIBezierPath *particlePath;
+
+@end
+
+@implementation UIView (Explode)
 
 float randomFloat()
 {
     return (float)rand()/(float)RAND_MAX;
-}
-
-- (void)dealloc
-{
-    NSLog(@"removing %@", self);
-}
-
--(void)setTappedGestureWithBlock:(GESTURE_Tapped)block
-{
-    self.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
-    tap.numberOfTapsRequired=1;
-    [self addGestureRecognizer:tap];
-    
-    objc_setAssociatedObject(self,&GESTURE_BLOCK,block, OBJC_ASSOCIATION_COPY);
-}
-
--(void)tapped:(UIGestureRecognizer *)gesture
-{
-    if (gesture.state==UIGestureRecognizerStateEnded)
-    {
-        GESTURE_Tapped block = (GESTURE_Tapped)objc_getAssociatedObject(self, &GESTURE_BLOCK);
-        
-        if (block)
-        {
-            block();
-            block = nil;
-        }
-    }
 }
 
 - (UIImage *)imageFromLayer:(CALayer *)layer
@@ -58,15 +35,8 @@ float randomFloat()
     return outputImage;
 }
 
-- (void)explode
+- (void)lp_explode
 {
-    
-    /*
-     [self saveTilesOfSize:(CGSize){256, 256} forImage:big toDirectory:directoryPath usingPrefix:@"bigimage_"];
-     dispatch_async(dispatch_get_main_queue(), ^{
-     [scrollView setNeedsDisplay];
-     });
-     */
     float size = self.frame.size.width/5;
     CGSize imageSize = CGSizeMake(size, size);
     
@@ -121,13 +91,13 @@ float randomFloat()
             
             CGImageRef tileImage = CGImageCreateWithImageInRect(fullImage,layerRect);
             
-            ParticleLayer *l = [ParticleLayer layer];
-            l.frame = layerRect;
-            l.contents = (__bridge id)(tileImage);
-            l.borderWidth = 0.0f;
-            l.borderColor = [UIColor blackColor].CGColor;
-            l.particlePath = [self pathForLayer:l parentRect:originalFrame];
-            [self.layer addSublayer:l];
+            LPParticleLayer *layer = [LPParticleLayer layer];
+            layer.frame = layerRect;
+            layer.contents = (__bridge id)(tileImage);
+            layer.borderWidth = 0.0f;
+            layer.borderColor = [UIColor blackColor].CGColor;
+            layer.particlePath = [self pathForLayer:layer parentRect:originalFrame];
+            [self.layer addSublayer:layer];
             
             CGImageRelease(tileImage);
         }
@@ -142,11 +112,11 @@ float randomFloat()
     
     [[self.layer sublayers] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         
-        ParticleLayer *l = (ParticleLayer *)obj;
+        LPParticleLayer *layer = (LPParticleLayer *)obj;
         
         //Path
         CAKeyframeAnimation *moveAnim = [CAKeyframeAnimation animationWithKeyPath:@"position"];
-        moveAnim.path = l.particlePath.CGPath;
+        moveAnim.path = layer.particlePath.CGPath;
         moveAnim.removedOnCompletion = YES;
         moveAnim.fillMode=kCAFillModeForwards;
         NSArray *timingFunctions = [NSArray arrayWithObjects:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut],nil];
@@ -158,7 +128,7 @@ float randomFloat()
         
         CAKeyframeAnimation *transformAnim = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
         
-        CATransform3D startingScale = l.transform;
+        CATransform3D startingScale = layer.transform;
         CATransform3D endingScale = CATransform3DConcat(CATransform3DMakeScale(randomFloat(), randomFloat(), randomFloat()), CATransform3DMakeRotation(M_PI*(1+randomFloat()), randomFloat(), randomFloat(), randomFloat()));
         
         NSArray *boundsValues = [NSArray arrayWithObjects:[NSValue valueWithCATransform3D:startingScale],
@@ -192,11 +162,11 @@ float randomFloat()
         animGroup.duration = speed;
         animGroup.fillMode =kCAFillModeForwards;
         animGroup.delegate = self;
-        [animGroup setValue:l forKey:@"animationLayer"];
-        [l addAnimation:animGroup forKey:nil];
+        [animGroup setValue:layer forKey:@"animationLayer"];
+        [layer addAnimation:animGroup forKey:nil];
         
         //take it off screen
-        [l setPosition:CGPointMake(0, -600)];
+        [layer setPosition:CGPointMake(0, -600)];
         
     }];
 }
@@ -204,7 +174,7 @@ float randomFloat()
 
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
 {
-    ParticleLayer *layer = [theAnimation valueForKey:@"animationLayer"];
+    LPParticleLayer *layer = [theAnimation valueForKey:@"animationLayer"];
     
     if (layer)
     {
@@ -222,7 +192,6 @@ float randomFloat()
 
 -(UIBezierPath *)pathForLayer:(CALayer *)layer parentRect:(CGRect)rect
 {
-    
     UIBezierPath *particlePath = [UIBezierPath bezierPath];
     [particlePath moveToPoint:layer.position];
     
@@ -235,7 +204,6 @@ float randomFloat()
     CGPoint curvePoint = CGPointZero;
     CGPoint endPoint = CGPointZero;
     
-    float maxHeight = (self.superview.frame.size.height*0.85) * randomFloat();
     float maxLeftRightShift = 1.f * randomFloat();
     
     CGFloat layerYPosAndHeight = (self.superview.frame.size.height-((layer.position.y+layer.frame.size.height)))*randomFloat();
@@ -261,5 +229,9 @@ float randomFloat()
     return particlePath;
     
 }
+
+@end
+
+@implementation LPParticleLayer
 
 @end
