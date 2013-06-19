@@ -12,7 +12,7 @@
 
 @interface LPParticleLayer : CALayer
 
-@property (nonatomic, assign) UIBezierPath *particlePath;
+@property (nonatomic, strong) UIBezierPath *particlePath;
 
 @end
 
@@ -109,8 +109,8 @@ float randomFloat()
     
     self.layer.backgroundColor = [UIColor clearColor].CGColor;
     
-    
-    [[self.layer sublayers] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    NSArray *sublayersArray = [self.layer sublayers];
+    [sublayersArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         
         LPParticleLayer *layer = (LPParticleLayer *)obj;
         

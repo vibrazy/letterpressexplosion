@@ -44,6 +44,7 @@ static NSString *GESTURE_BLOCK = @"GESTURE_BLOCK";
     
     __unsafe_unretained typeof(imgV) weakSelf = imgV;
     [self.view addSubview:imgV];
+    
     [imgV setTappedGestureWithBlock:^{
         [weakSelf lp_explode];
         [weakSelf setTappedGestureWithBlock:nil];
