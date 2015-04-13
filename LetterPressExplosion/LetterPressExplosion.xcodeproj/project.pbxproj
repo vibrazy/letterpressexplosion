@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5884DA881AC1AB1D009E872C /* UIView+Explode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C037AF11704AC6D001FF084 /* UIView+Explode.m */; };
+		5884DA891AC1AB69009E872C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AF61704ACFE001FF084 /* QuartzCore.framework */; };
+		5884DA8A1AC1ABA0009E872C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AB51704A960001FF084 /* CoreGraphics.framework */; };
 		6C037AB21704A960001FF084 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AB11704A960001FF084 /* UIKit.framework */; };
 		6C037AB41704A960001FF084 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AB31704A960001FF084 /* Foundation.framework */; };
 		6C037AB61704A960001FF084 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AB51704A960001FF084 /* CoreGraphics.framework */; };
@@ -19,7 +22,6 @@
 		6C037ACB1704A960001FF084 /* DTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C037ACA1704A960001FF084 /* DTVViewController.m */; };
 		6C037ACE1704A960001FF084 /* DTVViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C037ACC1704A960001FF084 /* DTVViewController_iPhone.xib */; };
 		6C037AD11704A960001FF084 /* DTVViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C037ACF1704A960001FF084 /* DTVViewController_iPad.xib */; };
-		6C037AD91704A960001FF084 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AD81704A960001FF084 /* SenTestingKit.framework */; };
 		6C037ADA1704A960001FF084 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AB11704A960001FF084 /* UIKit.framework */; };
 		6C037ADB1704A960001FF084 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C037AB31704A960001FF084 /* Foundation.framework */; };
 		6C037AE31704A960001FF084 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C037AE11704A960001FF084 /* InfoPlist.strings */; };
@@ -58,7 +60,6 @@
 		6C037ACD1704A960001FF084 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DTVViewController_iPhone.xib; sourceTree = "<group>"; };
 		6C037AD01704A960001FF084 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DTVViewController_iPad.xib; sourceTree = "<group>"; };
 		6C037AD71704A960001FF084 /* LetterPressExplosionTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LetterPressExplosionTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C037AD81704A960001FF084 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		6C037AE01704A960001FF084 /* LetterPressExplosionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LetterPressExplosionTests-Info.plist"; sourceTree = "<group>"; };
 		6C037AE21704A960001FF084 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6C037AE41704A960001FF084 /* LetterPressExplosionTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LetterPressExplosionTests.h; sourceTree = "<group>"; };
@@ -85,7 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C037AD91704A960001FF084 /* SenTestingKit.framework in Frameworks */,
+				5884DA8A1AC1ABA0009E872C /* CoreGraphics.framework in Frameworks */,
+				5884DA891AC1AB69009E872C /* QuartzCore.framework in Frameworks */,
 				6C037ADA1704A960001FF084 /* UIKit.framework in Frameworks */,
 				6C037ADB1704A960001FF084 /* Foundation.framework in Frameworks */,
 			);
@@ -120,7 +122,6 @@
 				6C037AB11704A960001FF084 /* UIKit.framework */,
 				6C037AB31704A960001FF084 /* Foundation.framework */,
 				6C037AB51704A960001FF084 /* CoreGraphics.framework */,
-				6C037AD81704A960001FF084 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -228,7 +229,7 @@
 			name = LetterPressExplosionTests;
 			productName = LetterPressExplosionTests;
 			productReference = 6C037AD71704A960001FF084 /* LetterPressExplosionTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -237,6 +238,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DTV;
+				LastTestingUpgradeCheck = 0620;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Daniel Tavares";
 			};
@@ -315,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5884DA881AC1AB1D009E872C /* UIView+Explode.m in Sources */,
 				6C037AE61704A960001FF084 /* LetterPressExplosionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,13 +455,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LetterPressExplosion/LetterPressExplosion-Prefix.pch";
 				INFOPLIST_FILE = "LetterPressExplosionTests/LetterPressExplosionTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -469,13 +472,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LetterPressExplosion/LetterPressExplosion-Prefix.pch";
 				INFOPLIST_FILE = "LetterPressExplosionTests/LetterPressExplosionTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

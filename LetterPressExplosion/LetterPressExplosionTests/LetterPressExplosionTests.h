@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Daniel Tavares. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface LetterPressExplosionTests : SenTestCase
+@interface LetterPressExplosionTests : XCTestCase
 
 @end

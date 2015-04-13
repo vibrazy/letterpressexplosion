@@ -7,7 +7,7 @@
 //
 
 #import "LetterPressExplosionTests.h"
-
+#import "UIView+Explode.h"
 @implementation LetterPressExplosionTests
 
 - (void)setUp
@@ -24,9 +24,12 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testButton
 {
-    STFail(@"Unit tests are not implemented yet in LetterPressExplosionTests");
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    [view lp_explodeWithCallback:^{
+        NSLog(@"callback");
+    }];
 }
 
 @end

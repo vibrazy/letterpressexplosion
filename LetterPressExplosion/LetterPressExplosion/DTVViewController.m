@@ -34,7 +34,24 @@ static NSString *GESTURE_BLOCK = @"GESTURE_BLOCK";
     [self.view setTappedGestureWithBlock:^{
         [weakSelf createLetterPressImages];
     }];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    CGRect frame = button.frame;
+    frame.origin.x = self.view.bounds.size.width * 0.5;
+    frame.origin.y = 200;
+    button.frame = frame;
+    [self.view addSubview:button];
+    
+    [button addTarget:self action:@selector(explodeMe:) forControlEvents:UIControlEventTouchUpInside];
 }
+
+- (void)explodeMe:(id)sender
+{
+    [sender lp_explodeWithCallback:^{
+        NSLog(@"call back");
+    }];
+}
+
 -(void)createLetterPressImages
 {
     UIImage *letterPressImage = [UIImage imageNamed:@"letterpress.png"];
@@ -46,7 +63,9 @@ static NSString *GESTURE_BLOCK = @"GESTURE_BLOCK";
     [self.view addSubview:imgV];
     
     [imgV setTappedGestureWithBlock:^{
-        [weakSelf lp_explode];
+        [weakSelf lp_explodeWithCallback:^{
+            NSLog(@"callback");
+        }];
         [weakSelf setTappedGestureWithBlock:nil];
     }];
 }

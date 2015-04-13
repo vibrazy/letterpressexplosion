@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Daniel Tavares. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
 
 #import "UIView+Explode.h"
 
@@ -16,7 +15,25 @@
 
 @end
 
+
 @implementation UIView (Explode)
+
+@dynamic completionCallback;
+
+- (void)setCompletionCallback:(ExplodeCompletion)completionCallback
+{
+    [self willChangeValueForKey:@"completionCallback"];
+    objc_setAssociatedObject(self, @selector(completionCallback), completionCallback, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    [self didChangeValueForKey:@"completionCallback"];
+}
+
+- (ExplodeCompletion)completionCallback
+{
+    // obj assoc
+    id object = objc_getAssociatedObject(self,@selector(completionCallback));
+    return object;
+}
+
 
 float randomFloat()
 {
@@ -35,8 +52,16 @@ float randomFloat()
     return outputImage;
 }
 
-- (void)lp_explode
+- (void)lp_explodeWithCallback:(ExplodeCompletion)callback
 {
+  
+    self.userInteractionEnabled = NO;
+    
+    if (callback)
+    {
+        self.completionCallback = callback;
+    }
+    
     float size = self.frame.size.width/5;
     CGSize imageSize = CGSizeMake(size, size);
     
@@ -58,7 +83,7 @@ float randomFloat()
     CGRect originalFrame = self.layer.frame;
     CGRect originalBounds = self.layer.bounds;
     
-   
+    
     CGImageRef fullImage = [self imageFromLayer:self.layer].CGImage;
     
     //if its an image, set it to nil
@@ -105,7 +130,7 @@ float randomFloat()
     
     [self.layer setFrame:originalFrame];
     [self.layer setBounds:originalBounds];
-
+    
     
     self.layer.backgroundColor = [UIColor clearColor].CGColor;
     
@@ -123,7 +148,7 @@ float randomFloat()
         [moveAnim setTimingFunctions:timingFunctions];
         
         float r = randomFloat();
-
+        
         NSTimeInterval speed = 2.35*r;
         
         CAKeyframeAnimation *transformAnim = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
@@ -142,9 +167,9 @@ float randomFloat()
         
         
         timingFunctions = [NSArray arrayWithObjects:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut],
-                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn],
-                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut], [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
-                                    nil];
+                           [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn],
+                           [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut], [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
+                           nil];
         [transformAnim setTimingFunctions:timingFunctions];
         transformAnim.fillMode = kCAFillModeForwards;
         transformAnim.removedOnCompletion = NO;
@@ -155,7 +180,7 @@ float randomFloat()
         opacityAnim.toValue = [NSNumber numberWithFloat:0.f];
         opacityAnim.removedOnCompletion = NO;
         opacityAnim.fillMode =kCAFillModeForwards;
-       
+        
         
         CAAnimationGroup *animGroup = [CAAnimationGroup animation];
         animGroup.animations = [NSArray arrayWithObjects:moveAnim,transformAnim,opacityAnim, nil];
@@ -171,6 +196,11 @@ float randomFloat()
     }];
 }
 
+- (void)lp_explode
+{
+    [self lp_explodeWithCallback:nil];
+}
+
 
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
 {
@@ -181,7 +211,12 @@ float randomFloat()
         //make sure we dont have any more
         if ([[self.layer sublayers] count]==1)
         {
+            if (self.completionCallback)
+            {
+                self.completionCallback();
+            }
             [self removeFromSuperview];
+            
         }
         else
         {
