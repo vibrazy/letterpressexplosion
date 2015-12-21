@@ -92,6 +92,7 @@ float randomFloat()
         [(UIImageView*)self setImage:nil];
     }
     
+    [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [[self.layer sublayers] makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
     
     for (int y = 0; y < fullRows; ++y)
